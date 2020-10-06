@@ -1,28 +1,43 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="todo">
+    <div class="todo-header">
+      <div class="todo-header__logo">
+        <img src="./assets/logo.png">
+      </div>
+      <div class="todo-header__actions">
+        <input type="checkbox" id="allCompletTasks">
+        <label for="allCompletTasks">Показать все выполненные задачи</label>
+      </div>
+    </div>
+    <div class="todo-body">
+      <div class="todo-body__fixed">
+        <input type="text" placeholder="Придумай текст задачи">
+        <button>Добавить</button>
+      </div>
+      <ul class="todo-body__list">
+        <li class="task-item">
+          <div class="task-item__text">Task 1</div>
+          <button class="button button-success">Выполнена</button>
+          <button class="button button--del">Удалить</button>
+        </li>
+        <li class="task-item">
+          <div class="task-item__text">Task 2</div>
+          <button class="button button-success">Выполнена</button>
+          <button class="button button--del">Удалить</button>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
 </style>
