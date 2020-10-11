@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import './assets/styles/index.sass'
+import './assets/styles/index.sass';
 
 Vue.config.productionTip = false
 

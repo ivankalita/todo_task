@@ -1,4 +1,87 @@
-$redColor: #444444
+.LAYOUT-APP
+    display: flex
+    // align-items: center
+    justify-content: center
+    min-height: 100vh
+    margin-top: 200px
+    @include mainFont
     
 .todo
-    color $redColor
+    max-width: 600px
+    width: 100%
+    &-header
+        display: flex
+        align-items: center
+        height: 60px
+        border-bottom: 1px solid grey
+        &__logo
+            height: 80%
+            width: auto
+            margin-right: auto
+        &__actions
+            & > *
+                cursor: pointer
+            .lbl
+                margin-left: 10px
+    &-body
+        margin-top: 20px
+        &__fixed
+            display: flex
+            .inp
+                display: block
+                width: 100%
+                margin-right: auto
+                padding: 0 5px
+                font-size: 16px
+                outline: 0
+                border-radius: 4px
+                box-shadow: none
+                color: #495057
+                background-color: #fff
+                background-clip: padding-box
+                border: 1px solid #ced4da
+                transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+                &:focus
+                    border-color: #80bdff
+                    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25)
+            .button
+                margin-left: 20px
+
+        &__list
+            margin-top: 20px
+            margin-bottom: 0
+            padding: 0
+            list-style-type: none
+            .task-item
+                display: flex
+                align-items: flex-start
+                padding: 10px 0
+                &:not(:first-child)
+                    margin-top: 10px
+                    border-top: 1px solid grey
+                &__text
+                    flex-grow: 1
+                    margin-right: 30px
+                    word-break: break-word
+                .button--del
+                    margin-left: 10px
+                &--done
+                    color: $greyColor
+                    .task-item__text
+                        text-decoration: line-through
+
+.button
+    display: inline-block
+    padding: 0 10px
+    border-radius: 4px
+    line-height: 32px
+    font-size: 16px
+    color: white
+    cursor: pointer
+    user-select: none
+    &.button--del
+        background-color: $redColor
+    &.button--success
+        background-color: $greenColor
+    &.button--add
+        background-color: $blueColor
